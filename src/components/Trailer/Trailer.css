@@ -1,0 +1,63 @@
+.trailer-container {
+    position: relative;
+}
+
+.trailer {
+    width: 960px;
+    height: 540px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.trailer:hover .player-btn {
+    display: block;
+}
+
+.player {
+    position: relative;
+    pointer-events: none;
+}
+
+.player-btn {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.trailer-close {
+    position: absolute;
+    top: -70px;
+    right: 0;
+    width: 48px;
+    height: 48px;
+}
+
+.trailer-close:hover path {
+    fill: #00000050;
+}
+
+@media screen and (max-width: 992px) {
+    .trailer {
+        width: 663px;
+        height: 375px;
+    }
+
+    .player-btn {
+        width: 64px;
+        height: 64px;
+    }
+
+    .trailer-close {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .trailer {
+        width: 375px;
+        height: 212px;
+    }
+}

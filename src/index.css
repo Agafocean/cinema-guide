@@ -1,0 +1,84 @@
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+@font-face {
+	font-family: "Play";
+	src: local("Play-Regular"), url("../fonts/Play-Regular.woff2") format("woff2"),
+		url("../fonts/Play-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Play";
+	src: local("Play-Bold"), url("../fonts/Play-Bold.woff2") format("woff2"),
+		url("../fonts/Play-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+body {
+	margin: 0;	
+}
+
+section {
+	margin-bottom: 60px;
+}
+
+#root {
+	margin: 0 auto;
+	padding: 20px 80px;
+	background-color: #0A0B0B;
+	color: #ffffff;
+	min-width: 375px;
+	max-width: 1440px;
+	width: 100%;
+
+	min-height: 100vh;
+
+	font-family: "Play";
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	border: none;	
+	outline: none;
+}
+
+button {
+	padding: 0;	
+	border: 0;	
+	background: transparent;
+	cursor: pointer;	
+}
+
+@media screen and (max-width: 1200px) {
+	#root {
+		padding: 20px 40px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#root {
+		padding: 20px;
+	}
+}

@@ -1,0 +1,20 @@
+.movie {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+    margin-bottom: 40px;
+}
+
+.info {
+    width: 59%;
+}
+
+@media screen and (max-width: 768px) {
+    .movie {
+        flex-direction: column-reverse;
+    }
+
+    .info {
+        width: 100%;
+    }
+}

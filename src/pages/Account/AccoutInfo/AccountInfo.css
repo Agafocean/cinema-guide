@@ -1,0 +1,79 @@
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 64px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.info-icon {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: #FFFFFF80;
+}
+
+.info-icon-in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+.info-name-title {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+.info-name-value {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+.info-button {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+    border-radius: 28px;
+    padding: 16px 48px;
+    background-color: #393B3C;
+}
+
+.info-button:focus, .info-button:hover {
+    background-color: #6A5DC2;
+  }
+
+@media screen and (max-width: 576px) {
+    .info-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .info-name-title {
+        font-size: 14px;
+        line-height: 20px;
+        color: #FFFFFF80;
+    }
+
+    .info-name-value {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .info-button {
+        display: block;
+        margin: 0 auto;
+    }
+}

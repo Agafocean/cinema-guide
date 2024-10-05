@@ -1,0 +1,12 @@
+.genre-poster img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+}
+
+.genre-title {       
+    padding-top: 50%;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: green;
+}

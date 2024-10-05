@@ -1,0 +1,16 @@
+.header-guest {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+.header-guest:hover {
+    color: #B4A9FF;
+}
+
+@media screen and (max-width: 576px) {
+    .header-guest {
+        display: none;
+    }
+}

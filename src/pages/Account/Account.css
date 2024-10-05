@@ -1,0 +1,73 @@
+.account-header {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #ffffff;
+    margin-bottom: 64px;
+}
+
+.account-wtd {
+    display: flex;
+    gap: 64px;
+    margin-bottom: 64px;
+}
+
+.account-wtd-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.account-menu {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #ffffff;
+}
+
+.favorites::after {
+    content: "Избранные фильмы";
+}
+
+.settings::after {
+    content: "Настройка аккаунта";
+}
+
+.favorites:hover,
+.settings:hover {
+    color: #B4A9FF;
+}
+
+.account {
+   button:hover svg path {
+        fill: #B4A9FF;
+    }
+}
+
+.underline {
+    border-bottom: 1.5px solid #DC5DFC;
+}
+
+@media screen and (max-width: 768px) {
+    .account-header {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 40px;
+    }
+
+    .account-wtd {
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .favorites::after {
+        content: "Избранное";
+    }
+
+    .settings::after {
+        content: "Настройки";
+    }
+}

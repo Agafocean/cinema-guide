@@ -1,0 +1,1 @@
+export { AboutMovie } from "./AboutMovie";

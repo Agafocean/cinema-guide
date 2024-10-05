@@ -1,0 +1,183 @@
+.login {
+  position: relative;
+  width: 420px;
+  padding: 64px 40px;
+  background: #ffffff;
+  border-radius: 24px;
+}
+
+.login span {
+  color: red;
+}
+
+.login-logo {
+  display: block;
+  margin: 0 auto;
+  width: 180px;
+  margin-bottom: 40px;
+}
+
+.register-title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000000;
+  margin: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-done {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+  margin: 24px;
+}
+
+.login-list {
+  margin-bottom: 12px;
+}
+
+.login-item {
+  max-width: 340px;
+  width: 100%;
+  padding: 16px 16px 16px 52px;
+  color: #000000;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  margin-bottom: 12px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+
+  background-image: url("\/email.svg");
+  background-repeat: no-repeat;
+  background-position: left 16px top 16px;
+}
+
+.login-password {
+  background-image: url("\/password.svg");
+}
+
+.login-name {
+  background-image: url("\/user-modal.svg");
+}
+
+.login-email:focus,
+.login-email:hover {
+  background-image: url("\/email-hover.svg");
+}
+
+.login-password:focus,
+.login-password:hover {
+  background-image: url("\/password-hover.svg");
+}
+
+.login-name:focus,
+.login-name:hover {
+  background-image: url("\/user-modal-hover.svg");
+}
+
+.login-item:focus,
+.login-item:hover {
+  border-color: #B4A9FF;
+}
+
+.login-item::placeholder {
+  color: #00000066;
+}
+
+.login-item:focus::placeholder,
+.login-item:hover::placeholder {
+  color: #B4A9FF;
+}
+
+.login-enter {
+  width: 100%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 16px 48px;
+  background-color: #393B3C;
+  margin-bottom: 24px;
+}
+
+.login-enter:focus,
+.login-enter:hover {
+  background-color: #6A5DC2;
+}
+
+.login-register {
+  display: block;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.error-email,
+.error-name,
+.error-surname,
+.error-password,
+.error-passwordCC {
+  border-color: red;
+}
+
+.error-email {
+  background-image: url("\/email-red.svg");
+}
+
+.error-password,
+.error-passwordCC {
+  background-image: url("\/password-red.svg");
+}
+
+.error-name,
+.error-surname {
+  background-image: url("\/user-modal-red.svg");
+}
+
+.errorAPI {
+  color: red;
+}
+
+.login-close {
+  position: absolute;
+  top: 0;
+  right: -72px;
+  width: 48px;
+  height: 48px;
+}
+
+.login {
+  button:hover svg path {
+    fill: #00000050;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .login {
+    max-width: 335px;
+    padding: 64px 20px 32px;
+  }
+
+  .login-logo {
+    margin-bottom: 32px;
+  }
+
+  .login-close {
+    top: 8px;
+    right: 8px;
+  }
+}

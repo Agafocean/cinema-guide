@@ -1,0 +1,162 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 40px;
+    gap: 80px;
+    z-index: 9;
+}
+
+.header-wtd {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.header-main,
+.header-genres {
+    color: #ffffff;
+}
+
+.header-main:hover,
+.header-genres:hover {
+    color: #B4A9FF;
+}
+
+.underline {
+    border-bottom: 1.5px solid #DC5DFC;
+}
+
+input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: url("\/x.svg");
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+}
+
+.search,
+.search-inable {
+    position: relative;
+    max-width: 560px;
+    width: 100%;
+}
+
+.header-search:focus,
+.search:hover {
+    outline: 1px solid #B4A9FF;
+    border-radius: 8px;
+}
+
+.input-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.header-search:focus.header-search+.input-icon path,
+.search:hover path {
+    fill: #B4A9FF;
+    fill-opacity: 1;
+}
+
+.header-search {
+    width: 100%;
+    padding: 16px 16px 16px 47px;
+    background-color: #393B3C;
+    color: #ffffff;
+    border-radius: 8px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.header-search::placeholder {
+    color: #FFFFFF80;
+}
+
+.header-search:focus::placeholder,
+.search:hover .header-search::placeholder {
+    color: #B4A9FF;
+}
+
+.header-search-icon,
+.header-genres-icon,
+.header-user-icon {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        gap: 40px;
+    }
+
+    .header-wtd {
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header {
+        gap: 70px;
+    }
+
+    .header-wtd {
+        justify-content: space-around;
+        gap: 20px;
+    }
+
+    .search {
+        display: none;
+    }
+
+    .header-search-icon {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .input-icon:hover {
+        cursor: pointer;
+    }
+
+    .input-icon:hover path {
+        fill-opacity: 1;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header {
+        gap: 40px;
+    }
+
+    .header-logo {
+        width: 136px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-wtd {
+        /*  width: unset;*/
+        gap: 20px;
+    }
+
+    .header-genres,
+    .header-main {
+        display: none;
+    }
+
+    .header-genres-icon {
+        display: flex;
+    }
+
+    .header-user-icon {
+        display: flex;
+    }
+}

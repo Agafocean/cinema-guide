@@ -1,0 +1,29 @@
+.info-title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: #ffffff;
+    margin-bottom: 16px;
+}
+
+.info-plot {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFFB2;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .info-title {
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .info-plot {
+        font-size: 18px;
+        line-height: 24px;
+    }
+}

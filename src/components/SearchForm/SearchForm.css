@@ -1,0 +1,28 @@
+.search-list {
+    max-width: 560px;
+    background-color: #393B3C;
+    border-radius: 16px;
+}
+
+.search-item {
+    display: flex;
+    gap: 16px;
+    padding: 20px 16px;
+}
+
+.search-title {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+    .search-item {
+        display: block;
+    }
+
+    .search-title {
+        text-align: center;
+    }
+}

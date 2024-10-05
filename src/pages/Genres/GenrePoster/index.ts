@@ -1,0 +1,1 @@
+export { GenrePoster } from "./GenrePoster";
