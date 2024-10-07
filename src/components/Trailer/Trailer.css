@@ -61,3 +61,9 @@
         height: 212px;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .trailer {
+        width: 294px;        
+    }
+}
