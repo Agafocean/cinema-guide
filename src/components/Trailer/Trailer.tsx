@@ -12,7 +12,7 @@ export const Trailer = () => {
     const { id } = useParams();
     const previousPath = location.state?.previousLocation.pathname;
     const [playing, setPlaying] = useState(true);
-    const [muted, setMuted] = useState(false);
+    const [muted, setMuted] = useState(true);
 
     return (
         <div className='trailer-container'>
