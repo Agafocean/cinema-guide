@@ -16,10 +16,9 @@ export const Trailer = () => {
 
     return (
         <div className='trailer-container'>
-            <div className="trailer" onClick={() => setPlaying(!playing)}>
+            <div className="trailer" onClick={() => {setPlaying(!playing); setMuted(false)}}>
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
-                    width="100%" height="100%" playing={playing} muted={muted}
-                    onStart={()=> setMuted(false)}
+                    width="100%" height="100%" playing={playing} muted={muted}                    
                 />
                 {playing && <svg className='player-btn' width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="80" height="80" rx="40" fill="white" />
