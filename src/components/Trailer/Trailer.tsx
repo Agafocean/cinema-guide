@@ -12,14 +12,14 @@ export const Trailer = () => {
     const { id } = useParams();
     const previousPath = location.state?.previousLocation.pathname;
     const [playing, setPlaying] = useState(true);
-    const [muted, setMuted] = useState(true);
+    const [muted, setMuted] = useState(false);
 
     return (
         <div className='trailer-container'>
             <div className="trailer" onClick={() => setPlaying(!playing)}>
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
                     width="100%" height="100%" playing={playing} muted={muted}
-                    onReady={()=>{setPlaying(true); setMuted(false)}}
+                    onStart={()=> setMuted(false)}
                 />
                 {playing && <svg className='player-btn' width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="80" height="80" rx="40" fill="white" />
