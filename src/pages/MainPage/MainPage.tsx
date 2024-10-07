@@ -1,6 +1,5 @@
 import { Top10 } from ".";
 import { RandomMovie } from "./RandomMovie";
-import "./Mainpage.css";
 
 export function MainPage() {
 	

@@ -19,7 +19,7 @@
 }
 
 body {
-	margin: 0 auto;		
+	margin: 0;		
 }
 
 section {
@@ -31,7 +31,7 @@ section {
 	padding: 20px 80px;
 	background-color: #0A0B0B;
 	color: #ffffff;
-	min-width: 375px;
+	min-width: 320px;
 	max-width: 1440px;
 	width: 100%;
 
@@ -80,5 +80,11 @@ button {
 @media screen and (max-width: 768px) {
 	#root {
 		padding: 20px;
+	}
+}
+
+@media screen and (max-width: 576px) {
+	#root {
+		padding: 12px;
 	}
 }

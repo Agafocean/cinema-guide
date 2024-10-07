@@ -27,8 +27,12 @@
 }
 
 @media screen and (max-width: 576px) {
+    .poster {
+        width: 296px;        
+    }
+
     .poster-modal {
-        width: 351px;
+        width: 100%;
         height: unset;
         margin-bottom: 16px;
     }

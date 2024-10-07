@@ -39,7 +39,7 @@
 }
 
 .account {
-   button:hover svg path {
+    button:hover svg path {
         fill: #B4A9FF;
     }
 }
@@ -69,5 +69,16 @@
 
     .settings::after {
         content: "Настройки";
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .account-wtd-item {
+        gap: 4px;
+    }
+
+    .account-menu {
+        font-size: 18px;
+        line-height: 24px;
     }
 }

@@ -59,3 +59,14 @@
         padding: 16px 40px;
     }
 }
+
+@media screen and (max-width: 576px) {
+    .info-footer {
+        width: 296px;  
+        gap: 8px;      
+    }
+
+    .info-trailer-R {
+        width: 296px;
+    }
+}

@@ -181,3 +181,10 @@
     right: 8px;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .login {
+    max-width: 296px;
+    padding: 64px 12px 32px;
+  }
+}
