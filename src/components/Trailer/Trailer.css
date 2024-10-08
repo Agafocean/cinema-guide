@@ -74,10 +74,10 @@
         height: 64px;
     }
 
-    .trailer-close {
+   /* .trailer-close {
         width: 32px;
         height: 32px;
-    }
+    }*/
 }
 
 @media screen and (max-width: 768px) {
