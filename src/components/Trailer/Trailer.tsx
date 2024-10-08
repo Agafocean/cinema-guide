@@ -12,13 +12,13 @@ export const Trailer = () => {
     const { id } = useParams();
     const previousPath = location.state?.previousLocation.pathname;
     const [playing, setPlaying] = useState(true);
-    const [muted, setMuted] = useState(true);
+    const [muted, setMuted] = useState(false);
 
     return (
         <div className='trailer-container'>
-            <div className="trailer" onClick={() => {setPlaying(!playing); setMuted(false)}}>
+            <div className="trailer" onClick={() => setPlaying(!playing)}>
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
-                    width="100%" height="100%" playing={playing} muted={muted}                    
+                    width="100%" height="100%" playing={playing} muted={muted}
                 />
                 {playing && <svg className='player-btn' width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="80" height="80" rx="40" fill="white" />
@@ -40,6 +40,20 @@ export const Trailer = () => {
                     <rect width="48" height="48" rx="24" fill="white" />
                     <path d="M22.5859 24L14.793 16.2071L16.2072 14.7928L24.0001 22.5857L31.793 14.7928L33.2072 16.2071L25.4143 24L33.2072 31.7928L31.793 33.2071L24.0001 25.4142L16.2072 33.2071L14.793 31.7928L22.5859 24Z" fill="black" />
                 </svg>
+            </button>
+
+            <button className="player-volume" onClick={() => setMuted(!muted)}>
+                <svg width="22" height="24" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4 9.5H1C0.867392 9.5 0.740215 9.44732 0.646447 9.35355C0.552678 9.25979 0.5 9.13261 0.5 9V5C0.5 4.86739 0.552678 4.74021 0.646447 4.64645C0.740215 4.55268 0.867392 4.5 1 4.5H4L8.5 1V13L4 9.5Z"
+                        stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M4 4.5V9.5" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                        d="M10.9124 5.58582C11.0981 5.77153 11.2454 5.99201 11.3459 6.23466C11.4464 6.47731 11.4981 6.73739 11.4981 7.00003C11.4981 7.26267 11.4464 7.52274 11.3459 7.7654C11.2454 8.00805 11.0981 8.22853 10.9124 8.41424"
+                        stroke="#000000" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                {muted &&<span className="player-mute">x</span>}
             </button>
 
         </div>
