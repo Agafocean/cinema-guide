@@ -54,7 +54,10 @@
 
 .player-mute {
     position: absolute;
+    top: 11px;
     right: 5px;
+    font-size: 18px;
+    line-height: 24px;
 }
 
 .player-volume:hover,
