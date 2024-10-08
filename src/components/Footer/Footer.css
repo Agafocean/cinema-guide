@@ -5,12 +5,6 @@
     margin-bottom: 16px;
 }
 
-.footer {
-    button:focus, button:hover {
-        background-color: #6A5DC2; 
-    }
-}
-
 .footer-name {
     display: flex;
     align-items: center;
@@ -43,6 +37,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.footer-icon:focus svg,
+.footer-icon:hover svg {
+    fill: #6A5DC2;
 }
 
 @media screen and (max-width: 768px) {
