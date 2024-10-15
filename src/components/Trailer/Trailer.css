@@ -3,8 +3,6 @@
 }
 
 .trailer {
-    
-
     width: 960px;
     height: 540px;
     border: 1px solid #ffffff;
@@ -16,11 +14,6 @@
 }
 
 .player {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);  
-
     position: relative;
     pointer-events: none;
 }
@@ -35,9 +28,11 @@
 
 .btns-control {
     position: absolute;
-    top: -70px;
+  /*  top: -70px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%);*/
+    top: 0;
+    left: 0;
     display: flex;
     gap: 50px;
 }
@@ -115,9 +110,11 @@
 .btns-control-fullscreen {
     display: none;
     position: absolute;
-    top: 50%;
+  /*  top: 50%;
     left: 10px;
-    transform: translateY(-50%);
+    transform: translateY(-50%);*/
+    top: 0;
+    left: 0;
     flex-direction: column;
     gap: 20px;
 }
