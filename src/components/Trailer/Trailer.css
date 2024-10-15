@@ -3,6 +3,8 @@
 }
 
 .trailer {
+    
+
     width: 960px;
     height: 540px;
     border: 1px solid #ffffff;
@@ -14,6 +16,11 @@
 }
 
 .player {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);  
+
     position: relative;
     pointer-events: none;
 }
