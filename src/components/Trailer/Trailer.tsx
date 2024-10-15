@@ -20,7 +20,8 @@ export const Trailer = () => {
             <div className={` ${fullscreen ? "trailer-fullscreen" : "trailer"}`}
                 onClick={() => setPlaying(!playing)}>
 
-                <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
+                <ReactPlayer className={` ${fullscreen ? "player-fullscreen" : "player"}`} 
+                url={`https://www.youtube.com/watch?v=${id}`}
                     width="100%" height="100%" playing={playing} muted={muted}
                 />
 
