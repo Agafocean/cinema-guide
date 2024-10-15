@@ -5,8 +5,8 @@
 }
 
 .trailer {
-    width: 960px;
-    height: 540px;
+    width: 100%;
+    height: 100%;
     border: 1px solid #ffffff;
     cursor: pointer;
 }
@@ -19,22 +19,20 @@
     position: relative;
     pointer-events: none;
 }
-/*
+
 .player-btn {
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}*/
+}
 
 .btns-control {
     position: absolute;
-  /*  top: -70px;
+    top: -70px;
     left: 50%;
-    transform: translateX(-50%);*/
-    top: 0;
-    left: 0;
+    transform: translateX(-50%);
     display: flex;
     gap: 50px;
 }
@@ -102,29 +100,19 @@
 }
 
 .trailer-fullscreen {
-    position: fixed;
+ /*   position: fixed;
     top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-}
-
-.player-fullscreen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+    left: 0;*/
+    width: 100%;
+    height: 100%;
 }
 
 .btns-control-fullscreen {
     display: none;
     position: absolute;
-  /*  top: 50%;
+    top: 50%;
     left: 10px;
-    transform: translateY(-50%);*/
-    top: 0;
-    left: 0;
+    transform: translateY(-50%);
     flex-direction: column;
     gap: 20px;
 }
@@ -135,12 +123,7 @@
         height: 375px;
     }
 
-    .trailer {
-        width: 663px;
-        height: 375px;
-    }
-
-    .trailer-fullscreen {
+    .trailer-container-fullscreen {
         width: 100vw;
         height: 100vh;
     }
@@ -157,12 +140,7 @@
         height: 212px;
     }
 
-    .trailer {
-        width: 375px;
-        height: 212px;
-    }
-
-    .trailer-fullscreen {
+    .trailer-container-fullscreen {
         width: 100vw;
         height: 100vh;
     }
@@ -173,11 +151,7 @@
         width: 294px;
     }
 
-    .trailer {
-        width: 294px;
-    }
-
-    .trailer-fullscreen {
+    .trailer-container-fullscreen {
         width: 100vw;
     }
 
