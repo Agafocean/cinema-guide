@@ -16,8 +16,8 @@ export const Trailer = () => {
     const [fullscreen, setFullscreen] = useState(false);
 
     return (
-        <div className={`trailer-container ${fullscreen && "trailer-container-fullscreen"}`} >
-            <div className={`trailer ${fullscreen && "trailer-fullscreen"}`}
+        <div className={` ${fullscreen ? "trailer-container-fullscreen" : "trailer-container"}`} >
+            <div className={` ${fullscreen ? "trailer-fullscreen" : "trailer"}`}
                 onClick={() => setPlaying(!playing)}>
 
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
@@ -35,7 +35,7 @@ export const Trailer = () => {
                 </svg>*/}
             </div>
 
-            <div className={`btns-control ${fullscreen && "btns-control-fullscreen"}`}>
+            <div className={` ${fullscreen ? "btns-control-fullscreen" : "btns-control"}`}>
                 <button className="player-volume"
                     onClick={() => setMuted(!muted)}>
                     <svg width="22" height="24" viewBox="0 0 12 14" fill="none" xmlns="http://www.w3.org/2000/svg">
