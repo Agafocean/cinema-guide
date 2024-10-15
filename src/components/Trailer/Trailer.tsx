@@ -16,11 +16,11 @@ export const Trailer = () => {
     const [fullscreen, setFullscreen] = useState(false);
 
     return (
-        <div className={` ${fullscreen ? "trailer-container-fullscreen" : "trailer-container"}`} >
-            <div className={` ${fullscreen ? "trailer-fullscreen" : "trailer"}`}
+        <div className={`${fullscreen ? "trailer-container-fullscreen" : "trailer-container"}`} >
+            <div className={`${fullscreen ? "trailer-fullscreen" : "trailer"}`}
                 onClick={() => setPlaying(!playing)}>
 
-                <ReactPlayer className={` ${fullscreen ? "player-fullscreen" : "player"}`} 
+                <ReactPlayer className={`${fullscreen ? "player-fullscreen" : "player"}`} 
                 url={`https://www.youtube.com/watch?v=${id}`}
                     width="100%" height="100%" playing={playing} muted={muted}
                 />

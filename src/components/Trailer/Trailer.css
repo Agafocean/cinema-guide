@@ -1,5 +1,7 @@
 .trailer-container {
     position: relative;
+    width: 960px;
+    height: 540px;
 }
 
 .trailer {
@@ -128,6 +130,11 @@
 }
 
 @media screen and (max-width: 992px) {
+    .trailer-container {
+        width: 663px;
+        height: 375px;
+    }
+
     .trailer {
         width: 663px;
         height: 375px;
@@ -145,6 +152,11 @@
 }
 
 @media screen and (max-width: 768px) {
+    .trailer-container {
+        width: 375px;
+        height: 212px;
+    }
+
     .trailer {
         width: 375px;
         height: 212px;
@@ -157,6 +169,10 @@
 }
 
 @media screen and (max-width: 374px) {
+    .trailer-container {
+        width: 294px;
+    }
+
     .trailer {
         width: 294px;
     }
