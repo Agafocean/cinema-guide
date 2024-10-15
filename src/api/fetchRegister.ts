@@ -1,7 +1,8 @@
+import { BASE_URL } from "../App";
 import { validateResponse } from "./validateResponse";
 
 export function register(email: string, name: string, surname: string, password: string): Promise<void> {
-    return fetch("https://cinemaguide.skillbox.cc/user", {
+    return fetch(`${BASE_URL}/user`, {
         method: "POST",
      //   credentials: "include",
         headers: {

@@ -8,6 +8,7 @@ import { delFavorite } from "../../../api/fetchDelFavorite";
 import { Profile, RootState, saveProfile } from "../../../store/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
+import { IMovie } from "../../Movie/iMovie";
 
 export const AccountPosters = () => {
     const profile = useSelector<RootState, Profile>(state => state.profile);
@@ -35,7 +36,7 @@ export const AccountPosters = () => {
         case "success": {
             return (
                 <div className="account-posters">
-                    {favoritesQuery.data.map((res: any, ind: string) => {
+                    {favoritesQuery.data.map((res: IMovie, ind: number) => {
                         return <div className="account-item" key={ind}>
                             {res.posterUrl ?
                                 <Link to={`/movie/${res.id}`} state={{ data: res }}>
@@ -53,7 +54,7 @@ export const AccountPosters = () => {
                             {delFavoriteMutation.isPending && <Loader />}
 
                             <button className="delFavorite" onClick={() => {
-                                setId(res.id);
+                                setId(String(res.id));
                                 delFavoriteMutation.mutate()
                             }}>
                                 <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">

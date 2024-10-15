@@ -1,7 +1,8 @@
+import { BASE_URL } from "../App";
 import { validateResponse } from "./validateResponse";
 
 export function addFavorite(id: string): Promise<{result: boolean}> {
-    return fetch("https://cinemaguide.skillbox.cc/favorites", {
+    return fetch(`${BASE_URL}/favorites`, {
         method: "POST",
         credentials: "include",
         headers: {

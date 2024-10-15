@@ -69,6 +69,7 @@
 
 .genreMovies-prev,
 .genreMovies-next {
+    height: 500px;
     font-weight: 700;
     font-size: 18px;
     line-height: 24px;

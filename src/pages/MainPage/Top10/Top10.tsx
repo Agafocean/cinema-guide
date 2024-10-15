@@ -2,9 +2,9 @@ import { useQuery } from "@tanstack/react-query"
 import { queryClient } from "../../../api/queryClient"
 import { fetchTop10 } from "../../../api/fetchTop10"
 import "./Top10.css";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Loader } from "../../../components/Loader";
-import { Movie } from "../../Movie";
+import { IMovie } from "../../Movie/iMovie";
 
 export const Top10 = () => {
     const top10Query = useQuery({
@@ -21,7 +21,7 @@ export const Top10 = () => {
                     <div className="top10">
                         <p className="top10-header">Топ 10 фильмов</p>
                         <div className="top10-posters">
-                            {top10Query.data.map((res: any, ind: string) => {
+                            {top10Query.data.map((res: IMovie, ind: number) => {
                                 if (res.posterUrl)
                                     return (
                                         <Link to={`/movie/${res.id}`} className="top10-item" key={ind}

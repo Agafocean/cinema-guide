@@ -1,12 +1,13 @@
+import { IMovie } from "../iMovie";
 import "./MovieHeader.css";
 
 interface Param {
-    data: any;
+    data: IMovie;
     isModal?: boolean;
 }
 
 export const MovieHeader = ({ data, isModal }: Param) => {
-    const rating = (data.tmdbRating).toFixed(1);
+    const rating = Number((data.tmdbRating).toFixed(1));
     return (
         <div className={`info-header ${isModal && "info-header-modal"}`}>
             <div className={`info-rating ${rating >= 4 && "info-rating-4"} ${rating >= 6 && "info-rating-6"}
@@ -17,7 +18,7 @@ export const MovieHeader = ({ data, isModal }: Param) => {
                 <span>{rating}</span>
             </div>
             <span className="info-year">{data.releaseYear}</span>
-            {data.genres.map((genre: string, ind: string) =>
+            {data.genres.map((genre: string, ind: number) =>
                 <span className="info-genre" key={ind}>{genre}</span>)}
             <span className="info-time">
                 {Math.floor(data.runtime / 60) + " ч " + data.runtime % 60 + " мин"}

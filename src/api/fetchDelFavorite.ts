@@ -1,7 +1,8 @@
+import { BASE_URL } from "../App";
 import { validateResponse } from "./validateResponse";
 
 export function delFavorite(id: string): Promise<{result: boolean}> {
-    return fetch(`https://cinemaguide.skillbox.cc/favorites/${id}`, {
+    return fetch(`${BASE_URL}/favorites/${id}`, {
         method: "DELETE",
         credentials: "include",
         headers: {

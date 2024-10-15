@@ -1,4 +1,34 @@
-import { ActionCreator, Reducer, Action } from "redux";
+import { ActionCreator, Reducer } from "redux";
+import { IMovie } from "../pages/Movie/iMovie";
+
+const RandomMovieInit = {
+  awardsSummary: "",
+  backdropUrl: "",
+  budget: "",
+  cast: [],
+  countriesOfOrigin: [],
+  director: "",
+  genres: [],
+  homepage: "",
+  id: 0,
+  keywords: [],
+  language: "",
+  languages: [],
+  originalTitle: "",
+  plot: "",
+  posterUrl: "",
+  production: "",
+  releaseDate: "",
+  releaseYear: 0,
+  revenue: "",
+  runtime: 0,
+  searchL: "",
+  status: "",
+  title: "",
+  tmdbRating: 0,
+  trailerUrl: "",
+  trailerYouTubeId: ""
+}
 
 export type Profile = {
   email: string; favorites: string[]; name: string; surname: string
@@ -7,12 +37,12 @@ export type Profile = {
 export type RootState = {
   activeModal: boolean;
   profile: Profile;
-  randomMovie: any
+  randomMovie: IMovie
 };
 const initialState = {
   activeModal: false,
   profile: { email: "", favorites: [], name: "", surname: "" },
-  randomMovie: {}
+  randomMovie: RandomMovieInit
 };
 
 type MyAction = SaveActiveModalAction | SaveProfileAction | SaveRandomMovieAction;
@@ -40,9 +70,9 @@ export const saveProfile: ActionCreator<SaveProfileAction> = (profile: Profile) 
 const SAVE_RANDOMMOVIE = 'SAVE_RANDOMMOVIE';
 export type SaveRandomMovieAction = {
   type: typeof SAVE_RANDOMMOVIE;
-  randomMovie: any
+  randomMovie: IMovie
 }
-export const saveRandomMovie: ActionCreator<SaveRandomMovieAction> = (randomMovie: any) => ({
+export const saveRandomMovie: ActionCreator<SaveRandomMovieAction> = (randomMovie: IMovie) => ({
   type: SAVE_RANDOMMOVIE,
   randomMovie: randomMovie
 })

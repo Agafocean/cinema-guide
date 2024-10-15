@@ -48,8 +48,8 @@ export const LoginForm = () => {
     const testEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
 
     if (!email || !testEmail.test(email)) { setErrorEmail(true); res = false }
-    if (isReg && !name) { setErrorName(true); res = false }
-    if (isReg && !surname) { setErrorSurname(true); res = false }
+    if (isReg && name.length < 4) { setErrorName(true); res = false }
+    if (isReg && surname.length < 4) { setErrorSurname(true); res = false }
     if (!password) { setErrorPassword(true); res = false }
     if (isReg && (!passwordCC || password !== passwordCC)) { setErrorPasswordCC(true); res = false }
 
@@ -122,6 +122,8 @@ export const LoginForm = () => {
 
           {loginMutation.isPending && <Loader />}
           {errorAPI && <span className='errorAPI'>Неверные данные</span>}
+          {errorName && <span className='errorAPI'>Имя должно иметь более 4 символов</span>}
+          {errorSurname && <span className='errorAPI'>Фамилия должна иметь более 4 символов</span>}
 
           <button className="login-enter" type="submit">
             {isReg ? "Создать аккаунт" : "Войти"}

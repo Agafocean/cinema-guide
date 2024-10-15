@@ -26,26 +26,20 @@
     transform: translate(-50%, -50%);
 }
 
-.trailer-close {
+.btns-control {
     position: absolute;
     top: -70px;
-    right: 0;
-    width: 48px;
-    height: 48px;
-}
-
-.trailer-close:hover path {
-    fill: #00000050;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
 }
 
 .player-volume {
     position: relative;
-    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    top: -70px;
-    right: 100px;
     width: 48px;
     height: 48px;
     background-color: #ffffff;
@@ -58,6 +52,7 @@
     right: 5px;
     font-size: 18px;
     line-height: 24px;
+    color: #000000;
 }
 
 .player-volume:hover,
@@ -66,10 +61,69 @@
     color: #00000050;
 }
 
+.player-volume:hover .player-mute {
+    color: #00000050;
+}
+
+.fullscreen-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+.trailer-close {
+    width: 48px;
+    height: 48px;
+}
+
+.trailer-close:hover path,
+.fullscreen-icon:hover path {
+    fill: #00000050;
+}
+
+.trailer-container-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.trailer-container-fullscreen:hover .btns-control-fullscreen {
+    display: flex;
+}
+
+.trailer-fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.btns-control-fullscreen {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 20px;
+}
+
 @media screen and (max-width: 992px) {
     .trailer {
         width: 663px;
         height: 375px;
+    }
+
+    .trailer-fullscreen {
+        width: 100vw;
+        height: 100vh;
     }
 
     .player-btn {
@@ -83,10 +137,23 @@
         width: 375px;
         height: 212px;
     }
+
+    .trailer-fullscreen {
+        width: 100vw;
+        height: 100vh;
+    }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 374px) {
     .trailer {
         width: 294px;
+    }
+
+    .trailer-fullscreen {
+        width: 100vw;
+    }
+
+    .btns-control-fullscreen {
+        gap: 10px;
     }
 }

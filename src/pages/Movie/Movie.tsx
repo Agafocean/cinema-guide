@@ -21,19 +21,20 @@ export const Movie = () => {
         case "error": return <div>=ERROR MOVIE=</div>;
         case "success":
 
+            const movieData = movieQuery.data;
             window.scrollTo(0, 0);
 
             return (
                 <section>
                     <div className="movie">
                         <div className="info">
-                            <MovieHeader data={movieQuery.data} />
-                            <MovieContent data={movieQuery.data} />
-                            <MovieFooter isRandom={false} data={movieQuery.data} />
+                            <MovieHeader data={movieData} />
+                            <MovieContent data={movieData} />
+                            <MovieFooter isRandom={false} data={movieData} />
                         </div>
-                        <MoviePoster data={movieQuery.data} />
+                        <MoviePoster data={movieData} />
                     </div>
-                    <AboutMovie data={movieQuery.data} />
+                    <AboutMovie data={movieData} />
                 </section>
             )
     }

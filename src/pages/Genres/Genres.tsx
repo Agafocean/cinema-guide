@@ -22,7 +22,7 @@ export const Genres = () => {
                         <p className="genres-header">Жанры фильмов</p>
                         <div className="genres-list">
                             {genresQuery.data.map((res: string, ind: number) =>
-                                <Link to={`/genres/${res}/0`} className="genres-item" key={ind}>
+                                <Link to={`/genres/${res}`} className="genres-item" key={ind}>
                                     <GenrePoster genre={res} page={ind} />
                                     <p className="genres-name">{res.charAt(0).toUpperCase() + res.slice(1)}</p>
                                 </Link>

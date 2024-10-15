@@ -1,7 +1,8 @@
+import { BASE_URL } from "../App";
 import { validateResponse } from "./validateResponse";
 
 export function logout(): Promise<void> {
-    return fetch("https://cinemaguide.skillbox.cc/auth/logout", {
+    return fetch(`${BASE_URL}/auth/logout`, {
         method: "GET",
         credentials: "include",
         headers: {

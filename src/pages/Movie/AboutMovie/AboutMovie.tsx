@@ -1,6 +1,11 @@
+import { IMovie } from "../iMovie";
 import "./AboutMovie.css";
 
-export const AboutMovie = ({ data }: any) => {
+interface Param {    
+    data: IMovie
+}
+
+export const AboutMovie = ({data}: Param) => {
     const getLanguage = (code: string) => {
         const lang = new Intl.DisplayNames(['ru'], { type: 'language' });
         return lang.of(code);
