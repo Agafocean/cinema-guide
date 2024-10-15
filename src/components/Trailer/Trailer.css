@@ -17,14 +17,14 @@
     position: relative;
     pointer-events: none;
 }
-
+/*
 .player-btn {
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-}
+}*/
 
 .btns-control {
     position: absolute;
