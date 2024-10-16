@@ -11,8 +11,16 @@
     cursor: pointer;
 }
 
+/*
 .trailer:hover .player-btn {
-    display: block;
+  /*  display: block;
+
+    opacity: 1;
+  transition: opacity 0s;
+}*/
+
+.trailer:hover .player-btn {
+    animation: hide 3s;
 }
 
 .player {
@@ -24,11 +32,14 @@
 }
 
 .player-btn {
-    display: none;
+    /*  display: none;*/
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    opacity: 0;
+   /* transition: opacity 0s 5s;*/
 }
 
 .btns-control {
@@ -99,8 +110,10 @@
 }
 
 .trailer-container-fullscreen:hover .btns-control-fullscreen {
-    display: flex;
+  /*  display: flex;*/
+  animation: hide 3s;
 }
+
 /*
 .trailer-fullscreen {
  /*   position: fixed;
@@ -111,13 +124,29 @@
 }*/
 
 .btns-control-fullscreen {
-    display: none;
+  /*  display: none;*/
     position: absolute;
     top: 50%;
     left: 10px;
     transform: translateY(-50%);
     flex-direction: column;
     gap: 20px;
+
+    opacity: 0;
+}
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @media screen and (max-width: 992px) {
