@@ -17,19 +17,20 @@ export const Trailer = () => {
 
     return (
         <div className={`trailer-container ${fullscreen && "trailer-container-fullscreen"}`} >
-            <div className={`trailer`}
-                onClick={() => setPlaying(!playing)}>
+            <div className="trailer">
 
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
                     width="100%" height="100%" playing={playing} muted={muted}
                 />
 
-                {playing && <svg className='player-btn' width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {playing && <svg onClick={() => setPlaying(!playing)} className='player-btn'
+                    width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="80" height="80" rx="40" fill="white" />
                     <path d="M30 25H33.3333V55H30V25ZM46.6667 25H50V55H46.6667V25Z" fill="black" />
                 </svg>}
 
-                {!playing && <svg className='player-btn' width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {!playing && <svg onClick={() => setPlaying(!playing)} className='player-btn'
+                    width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="80" height="80" rx="40" fill="white" />
                     <path d="M30 53.6595V26.3404C30 25.0313 31.4399 24.2332 32.55 24.927L54.4053 38.5867C55.4498 39.2393 55.4498 40.7605 54.4053 41.4133L32.55 55.0728C31.4399 55.7667 30 54.9687 30 53.6595Z" fill="black" />
                 </svg>}
