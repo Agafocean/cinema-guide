@@ -18,12 +18,12 @@
     opacity: 1;
   transition: opacity 0s;
 }*/
-
+/*
 .trailer:hover .player-btn {
     animation: hide 3s;
-}
+}*/
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
     .trailer:hover .player-btn {
         animation: hide 3s;
     }
