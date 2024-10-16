@@ -15,11 +15,11 @@
     animation: hide 3s;
 }*/
 
-@media (hover: none) {
+/*@media (hover: none) {
     .trailer:hover .player-btn{
         animation: hide 3s;        
     }
-}
+}*/
 
 .player {
     position: absolute;
@@ -36,7 +36,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
-    opacity: 0;
+  /*  opacity: 1;*/
     /* transition: opacity 0s 5s;*/
 }
 
@@ -106,11 +106,11 @@
     width: 100vw;
     height: 100vh;
 }
-
+/*
 .trailer-container-fullscreen:hover .btns-control-fullscreen {
-    /*  display: flex;*/
+    /*  display: flex;
     animation: hide 3s;
-}
+}*/
 
 /*
 .trailer-fullscreen {
@@ -130,7 +130,7 @@
     flex-direction: column;
     gap: 20px;
 
-    opacity: 0;
+  /*  opacity: 0;*/
 }
 
 @keyframes hide {
