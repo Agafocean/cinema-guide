@@ -19,7 +19,8 @@
   transition: opacity 0s;
 }*/
 
-.trailer:hover .player-btn {
+.trailer:hover .player-btn,
+.trailer:focus .player-btn {
     animation: hide 3s;
 }
 
