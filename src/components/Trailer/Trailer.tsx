@@ -19,7 +19,8 @@ export const Trailer = () => {
     return (
         <div className={`trailer-container ${fullscreen && "trailer-container-fullscreen"}`} >
             <div className="trailer" onClick={() => {
-                setHover(true); setTimeout(() => setHover(false), 3000);}}>
+                setHover(true); setTimeout(() => setHover(false), 3000);
+            }}>
 
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
                     width="100%" height="100%" playing={playing} muted={muted}
