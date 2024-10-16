@@ -17,7 +17,7 @@ export const Trailer = () => {
 
     return (
         <div className={`trailer-container ${fullscreen && "trailer-container-fullscreen"}`} >
-            <div className={`trailer ${fullscreen && "trailer-fullscreen"}`}
+            <div className={`trailer`}
                 onClick={() => setPlaying(!playing)}>
 
                 <ReactPlayer className="player" url={`https://www.youtube.com/watch?v=${id}`}
