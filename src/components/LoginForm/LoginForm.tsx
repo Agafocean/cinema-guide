@@ -25,7 +25,7 @@ export const LoginForm = () => {
   const [errorPassword, setErrorPassword] = useState(false);
   const [errorPasswordCC, setErrorPasswordCC] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();  
+  const navigate = useNavigate();
   const previousPath = useLocation().state?.previousLocation.pathname;
 
   const loginMutation = useMutation({
@@ -71,7 +71,7 @@ export const LoginForm = () => {
   return (
     <div className="login">
       <img className="login-logo" src="\logo.svg" alt="logo" />
-      {isReg && <p className='register-title'>{isRegDone ? "Регистрация завершена" : "Регистрация"}</p>}
+      {isReg && <p className='register-title'>{isRegDone ? "Sign up completed" : "Sign up"}</p>}
       {!isRegDone && <>
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="login-list">
@@ -81,7 +81,7 @@ export const LoginForm = () => {
                 setErrorEmail(false);
                 setErrorAPI(false)
               }}
-              value={email} placeholder="Электронная почта" />
+              value={email} placeholder="Email" />
 
             {isReg &&
               <input className={`login-item login-name ${errorName && "error-name"}`} type="text"
@@ -90,7 +90,7 @@ export const LoginForm = () => {
                   setErrorName(false);
                   setErrorAPI(false)
                 }}
-                value={name} placeholder="Имя" />
+                value={name} placeholder="Given name" />
             }
 
             {isReg &&
@@ -100,7 +100,7 @@ export const LoginForm = () => {
                   setErrorSurname(false);
                   setErrorAPI(false)
                 }}
-                value={surname} placeholder="Фамилия" />
+                value={surname} placeholder="Family name" />
             }
             <input className={`login-item login-password ${errorPassword && "error-password"}`} type="password"
               onChange={(event) => {
@@ -108,7 +108,7 @@ export const LoginForm = () => {
                 setErrorPassword(false);
                 setErrorAPI(false)
               }}
-              value={password} placeholder="Пароль" />
+              value={password} placeholder="Password" />
             {isReg &&
               <input className={`login-item login-password ${errorPasswordCC && "error-passwordCC"}`} type="password"
                 onChange={(event) => {
@@ -116,28 +116,31 @@ export const LoginForm = () => {
                   setErrorPasswordCC(false);
                   setErrorAPI(false)
                 }}
-                value={passwordCC} placeholder="Подтвердите пароль" />
+                value={passwordCC} placeholder="Confirm password" />
             }
           </div>
 
           {loginMutation.isPending && <Loader />}
-          {errorAPI && <span className='errorAPI'>Неверные данные</span>}
-          {errorName && <span className='errorAPI'>Имя должно иметь более 4 символов</span>}
-          {errorSurname && <span className='errorAPI'>Фамилия должна иметь более 4 символов</span>}
+          {errorAPI && <span className='errorAPI'>Wrong data</span>}
+          {errorName && <span className='errorAPI'>Given name must have at least 4 characters</span>}
+          {errorSurname && <span className='errorAPI'>Family name must have at least 4 characters</span>}
 
           <button className="login-enter" type="submit">
-            {isReg ? "Создать аккаунт" : "Войти"}
+            {isReg ? "Create an account" : "Sign in"}
           </button>
         </form>
 
-        <button className="login-register" onClick={() => setIsReg(!isReg)} disabled={loginMutation.isPending}>
-          {isReg ? "У меня есть пароль" : "Регистрация"}
+        <button className="login-register" onClick={() => {
+          setErrorAPI(false); setErrorName(false); setErrorSurname(false); setIsReg(!isReg)
+        }}
+          disabled={loginMutation.isPending}>
+          {isReg ? "I have an account" : "Sign up"}
         </button>
       </>}
 
       {isRegDone && <>
-        <p className='register-done'>Используйте вашу электронную почту для входа</p>
-        <button className="login-enter" onClick={() => modalExit()}>Войти</button>
+        <p className='register-done'>Use your email to sign in</p>
+        <button className="login-enter" onClick={() => modalExit()}>Sign in</button>
       </>}
 
       <button className="login-close" onClick={() => {

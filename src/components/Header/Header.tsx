@@ -45,16 +45,16 @@ export const Header = () => {
             <div className="header-wtd">
                 {!searchInable && <>
                     <Link className={`header-main ${location.pathname === "/" && "underline"}`}
-                        to={"/"}>Главная</Link>
+                        to={"/"}>Main</Link>
                     <Link className={`header-genres ${location.pathname === "/genres" && "underline"}`}
-                        to={"/genres"}>Жанры</Link>
+                        to={"/genres"}>Genres</Link>
                     <Link className="header-genres-icon" to={"/genres"}>
                         <img src="\genres.svg" alt="genres"></img>
                     </Link>
                 </>}
 
                 <form className={searchInable ? "search-inable" : "search"} onSubmit={handleSearch}>
-                    <input className="header-search" type="search" placeholder="Поиск" disabled={disableInput}
+                    <input className="header-search" type="search" placeholder="Search" disabled={disableInput}
                         onChange={(event) => { setSearchValue(event.target.value) }}
                         value={searchValue}
                     />

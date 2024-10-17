@@ -64,12 +64,12 @@ export const MovieFooter = ({ isRandom, data }: Param) => {
                 className={isRandom ? "info-trailer-R" : ""} >
                 <button className={isRandom ? "info-trailer info-trailer-R" : "info-trailer"}
                     type="button" onClick={() => dispatch(saveActiveModal(true))}>
-                    Трейлер
+                    Trailer
                 </button>
             </Link>
 
             <Link to={`/movie/${id}`} state={{ data: data }}>
-                {isRandom && <button className="info-about" type="button">О фильме</button>}
+                {isRandom && <button className="info-about" type="button">About</button>}
             </Link>
 
             {(addFavoriteMutation.isPending || delFavoriteMutation.isPending) && <Loader />}

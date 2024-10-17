@@ -126,6 +126,10 @@
   color: #000000;
 }
 
+.login-register:hover {
+color: #00000050;
+}
+
 .error-email,
 .error-name,
 .error-surname,

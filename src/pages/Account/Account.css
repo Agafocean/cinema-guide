@@ -25,14 +25,6 @@
     color: #ffffff;
 }
 
-.favorites::after {
-    content: "Избранные фильмы";
-}
-
-.settings::after {
-    content: "Настройка аккаунта";
-}
-
 .favorites:hover,
 .settings:hover {
     color: #B4A9FF;
@@ -61,14 +53,6 @@
         justify-content: center;
         gap: 24px;
         margin-bottom: 40px;
-    }
-
-    .favorites::after {
-        content: "Избранное";
-    }
-
-    .settings::after {
-        content: "Настройки";
     }
 }
 

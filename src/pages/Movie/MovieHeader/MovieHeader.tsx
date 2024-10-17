@@ -21,7 +21,7 @@ export const MovieHeader = ({ data, isModal }: Param) => {
             {data.genres.map((genre: string, ind: number) =>
                 <span className="info-genre" key={ind}>{genre}</span>)}
             <span className="info-time">
-                {Math.floor(data.runtime / 60) + " ч " + data.runtime % 60 + " мин"}
+                {Math.floor(data.runtime / 60) + " hr " + data.runtime % 60 + " min"}
             </span>
         </div>
     )

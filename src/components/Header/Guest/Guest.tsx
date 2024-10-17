@@ -11,7 +11,7 @@ export const Guest = () => {
         <Link className="header-guest" to={"/login"} state={{ previousLocation: location }}
             onClick={() => dispatch(saveActiveModal(true))}
         >
-            Войти
+            Sign&nbsp;in
         </Link>
     )
 }

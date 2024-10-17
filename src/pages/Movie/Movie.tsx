@@ -21,6 +21,8 @@ export const Movie = () => {
         case "error": return <div>=ERROR MOVIE=</div>;
         case "success":
 
+        console.log("movie", movieQuery.data)
+
             const movieData = movieQuery.data;
             window.scrollTo(0, 0);
 

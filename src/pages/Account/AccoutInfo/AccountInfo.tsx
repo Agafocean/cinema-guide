@@ -38,7 +38,7 @@ export const AccountInfo = () => {
                         </div>
                     </div>
                     <div className="info-name">
-                        <p className="info-name-title">Имя Фамилия</p>
+                        <p className="info-name-title">Name</p>
                         <p className="info-name-value">{profile.name} {profile.surname}</p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ export const AccountInfo = () => {
                         </div>
                     </div>
                     <div className="info-name">
-                        <p className="info-name-title">Электронная почта</p>
+                        <p className="info-name-title">Email</p>
                         <p className="info-name-value">{profile.email}</p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@ export const AccountInfo = () => {
             {logoutMutation.isPending && <Loader />}
 
             <button className="info-button" type="button" onClick={handleLogout}>
-                Выйти из аккаунта
+                Sign out
             </button>
         </>
     )

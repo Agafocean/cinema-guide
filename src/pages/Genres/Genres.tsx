@@ -19,7 +19,7 @@ export const Genres = () => {
             return (
                 <section>
                     <div className="genres">
-                        <p className="genres-header">Жанры фильмов</p>
+                        <p className="genres-header">Genres</p>
                         <div className="genres-list">
                             {genresQuery.data.map((res: string, ind: number) =>
                                 <Link to={`/genres/${res}`} className="genres-item" key={ind}>
