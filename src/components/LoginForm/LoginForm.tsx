@@ -132,6 +132,7 @@ export const LoginForm = () => {
 
         <button className="login-register" onClick={() => {
           setErrorAPI(false); setErrorName(false); setErrorSurname(false); setIsReg(!isReg)
+          setErrorEmail(false); setErrorPassword(false); setErrorPasswordCC(false); setIsReg(!isReg)
         }}
           disabled={loginMutation.isPending}>
           {isReg ? "I have an account" : "Sign up"}
