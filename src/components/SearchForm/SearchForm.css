@@ -1,4 +1,6 @@
 .search-list {
+    margin: 0 auto;
+
     max-width: 560px;
     background-color: #393B3C;
     border-radius: 16px;

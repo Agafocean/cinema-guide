@@ -19,17 +19,19 @@ export const SearchForm = () => {
         case "pending": return <Loader />;
         case "error": return <div>=ERROR SEARCH=</div>;
         case "success": {
-            return <div className='search-list'> {
-                searchQuery.data.map((movie: IMovie, ind: number) =>
-                    <Link className="search-item" to={`/movie/${movie.id}`} key={ind} state={{ data: movie }}>
-                        <MoviePoster data={movie} isModal={true} />
-                        <div>
-                            <MovieHeader data={movie} isModal={true} />
-                            <p className="search-title">{movie.title}</p>
-                        </div>
-                    </Link>
-                )
-            }</div>
+            return (
+                <div className='search-list'> {
+                    searchQuery.data.map((movie: IMovie, ind: number) =>
+                        <Link className="search-item" to={`/movie/${movie.id}`} key={ind} state={{ data: movie }}>
+                            <MoviePoster data={movie} isModal={true} />
+                            <div>
+                                <MovieHeader data={movie} isModal={true} />
+                                <p className="search-title">{movie.title}</p>
+                            </div>
+                        </Link>
+                    )
+                }</div>
+            )
         }
     }
 }
