@@ -49,6 +49,7 @@
     }
 
     .genres-name {
+        padding: 12px 0 20px;
         font-size: 14px;
         line-height: 20px;  
     }
@@ -60,8 +61,7 @@
     }
 
     .genres-item {
-        width: 351px;
-        height: 612px;
+        width: 296px;      
     }
 
     .genres-name {
