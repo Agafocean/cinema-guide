@@ -19,7 +19,7 @@ export const Top10 = () => {
             return (
                 <section>
                     <div className="top10">
-                        <p className="top10-header">Топ 10 фильмов</p>
+                        <p className="top10-header">Top 10 movies</p>
                         <div className="top10-posters">
                             {top10Query.data.map((res: IMovie, ind: number) => {
                                 if (res.posterUrl)
