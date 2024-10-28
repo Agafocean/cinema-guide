@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { IMovie } from "../iMovie";
 import "./MoviePoster.css";
+import { Loader } from "../../../components/Loader";
 
 interface Param {
     data: IMovie;
@@ -7,21 +9,25 @@ interface Param {
 }
 
 export const MoviePoster = ({ data, isModal }: Param) => {
-    /*  return (
-          <div className={`poster ${isModal && "poster-modal"}`}>
-              {data.posterUrl && <img src={data.posterUrl} alt="poster" />}
-          </div>*/
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(false)
+    }, [data.id]);
+
 
     if (data.posterUrl)
         return (
-            <div className={`poster ${isModal && "poster-modal"}`}>
-                {data.posterUrl && <img src={data.posterUrl} alt="poster" />}
+            <div className={`poster ${isModal && "poster-modal"} `}>
+                {!isLoaded && <Loader />}
+                {data.posterUrl && <img className={`poster-img ${!isLoaded && "poster-loaded"}`}
+                    src={data.posterUrl} onLoad={() => setIsLoaded(true)} alt="poster" />}
             </div>
         )
     else return (
-        <div className="noposter">
-            <p className="genreMovies-title">{data.title}</p>
-            <p>Poster is coming</p>
+        <div className={`noposter ${isModal && "poster-modal"} `}>
+            {!isModal && <p className="genreMovies-title">{data.title}</p>}
+            {!isModal && <p>Poster is coming</p>}
         </div>
     )
 }

@@ -143,7 +143,6 @@ input::-webkit-search-cancel-button {
 
 @media screen and (max-width: 576px) {
     .header-wtd {
-        /*  width: unset;*/
         gap: 20px;
     }
 

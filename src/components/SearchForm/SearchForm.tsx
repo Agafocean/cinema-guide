@@ -24,7 +24,7 @@ export const SearchForm = () => {
                     searchQuery.data.map((movie: IMovie, ind: number) =>
                         <Link className="search-item" to={`/movie/${movie.id}`} key={ind} state={{ data: movie }}>
                             <MoviePoster data={movie} isModal={true} />
-                            <div>
+                            <div className="search-descr">
                                 <MovieHeader data={movie} isModal={true} />
                                 <p className="search-title">{movie.title}</p>
                             </div>

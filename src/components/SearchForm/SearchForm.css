@@ -1,6 +1,5 @@
 .search-list {
     margin: 0 auto;
-
     max-width: 560px;
     background-color: #393B3C;
     border-radius: 16px;
@@ -8,8 +7,17 @@
 
 .search-item {
     display: flex;
+    align-items: center;
     gap: 16px;
     padding: 20px 16px;
+}
+
+.search-item:not(:last-child) {
+    border-bottom: 1px solid lightgrey;
+}
+
+.search-descr {
+    overflow: auto;
 }
 
 .search-title {

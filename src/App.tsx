@@ -3,7 +3,7 @@ import { GenreMovies, Genres, MainPage, Movie } from "./pages";
 import { Footer } from "./components/Footer";
 import { Account } from "./pages/Account";
 import { Header } from "./components/Header";
-import { RootState, saveProfile, saveRandomMovie } from "./store/reducer";
+import { RootState, saveProfile } from "./store/reducer";
 import { fetchProfile } from "./api/fetchProfile";
 import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "./pages/Modal";
@@ -11,7 +11,6 @@ import { LoginForm } from "./components/LoginForm";
 import { useEffect } from "react";
 import { SearchForm } from "./components/SearchForm";
 import { Trailer } from "./components/Trailer";
-import { fetchRandom } from "./api/fetchRandom";
 
 export const BASE_URL = 'https://cinemaguide.skillbox.cc';
 
