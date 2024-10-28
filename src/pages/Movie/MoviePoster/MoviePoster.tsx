@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IMovie } from "../iMovie";
 import "./MoviePoster.css";
 import { Loader } from "../../../components/Loader";
@@ -10,18 +10,25 @@ interface Param {
 
 export const MoviePoster = ({ data, isModal }: Param) => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const posterImg = useRef<HTMLImageElement>(null);
 
     useEffect(() => {
-        setIsLoaded(false)
+        if (posterImg.current?.complete) {
+            setIsLoaded(true)
+        }
+        else {
+            setIsLoaded(false)
+        }
     }, [data.id]);
-
 
     if (data.posterUrl)
         return (
             <div className={`poster ${isModal && "poster-modal"} `}>
                 {!isLoaded && <Loader />}
                 {data.posterUrl && <img className={`poster-img ${!isLoaded && "poster-loaded"}`}
-                    src={data.posterUrl} onLoad={() => setIsLoaded(true)} alt="poster" />}
+                    src={data.posterUrl} onLoad={() => setIsLoaded(true)} alt="poster"
+                    ref={posterImg}
+                />}
             </div>
         )
     else return (
