@@ -33,8 +33,8 @@ export const MoviePoster = ({ data, isModal }: Param) => {
         )
     else return (
         <div className={`noposter ${isModal && "poster-modal"} `}>
-            {!isModal && <p className="genreMovies-title">{data.title}</p>}
-            {!isModal && <p>Poster is coming</p>}
+            {<p className="genreMovies-title">{data.title}</p>}
+            {<p>Poster is coming</p>}
         </div>
     )
 }

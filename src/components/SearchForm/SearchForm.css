@@ -16,10 +16,6 @@
     border-bottom: 1px solid lightgrey;
 }
 
-.search-descr {
-    overflow: auto;
-}
-
 .search-title {
     font-weight: 700;
     font-size: 18px;
@@ -30,6 +26,12 @@
 @media screen and (max-width: 576px) {
     .search-item {
         display: block;
+    }  
+
+    .search-descr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .search-title {
