@@ -9,7 +9,6 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { LoaderBottom } from "../../components/LoaderBottom";
 import { IMovie } from "../Movie/iMovie";
 
-
 const count = 10;
 
 export const GenreMovies = () => {
@@ -40,36 +39,39 @@ export const GenreMovies = () => {
                             <Link to={"/genres"}><span className="genreMovies-toGenres">{"<"}</span></Link>
                             <span>{genre && genre.charAt(0).toUpperCase() + genre.slice(1)}</span>
                         </div>
-                        <InfiniteScroll
-                            dataLength={genreMovies.length}
-                            next={() => queryClient.invalidateQueries({ queryKey: ["genreMovies", genre] })}
-                            hasMore={true} // Replace with a condition based on your data source
-                            loader={<LoaderBottom />}
-                            endMessage={<p style={{ textAlign: "center" }}>THE END</p>}
-                        >
-                            <div className="genreMovies-posters">
-                                {genreMovies
-                                    .map((res: IMovie, ind: number) => {
-                                        if (res.posterUrl)
-                                            return (
+                        <div id="scrollableDiv" className="scrollableDiv">
+                            <InfiniteScroll
+                                dataLength={genreMovies.length}
+                                next={() => queryClient.invalidateQueries({ queryKey: ["genreMovies", genre] })}
+                                hasMore={true} // Replace with a condition based on your data source
+                                loader={<LoaderBottom />}
+                                endMessage={<p style={{ textAlign: "center" }}>THE END</p>}
+                                scrollableTarget="scrollableDiv"
+                            >
+                                <div className="genreMovies-posters">
+                                    {genreMovies
+                                        .map((res: IMovie, ind: number) => {
+                                            if (res.posterUrl)
+                                                return (
+                                                    <Link to={`/movie/${res.id}`} className="genreMovies-item" key={ind}
+                                                        state={{ data: res }}>
+                                                        <img src={res.posterUrl} />
+                                                    </Link>
+                                                )
+                                            else return (
                                                 <Link to={`/movie/${res.id}`} className="genreMovies-item" key={ind}
                                                     state={{ data: res }}>
-                                                    <img src={res.posterUrl} />
+                                                    <div className="genreMovies-noposter">
+                                                        <p className="genreMovies-title">{res.title}</p>
+                                                        <p>Poster is coming</p>
+                                                    </div>
                                                 </Link>
                                             )
-                                        else return (
-                                            <Link to={`/movie/${res.id}`} className="genreMovies-item" key={ind}
-                                                state={{ data: res }}>
-                                                <div className="genreMovies-noposter">
-                                                    <p className="genreMovies-title">{res.title}</p>
-                                                    <p>Poster is coming</p>
-                                                </div>
-                                            </Link>
-                                        )
-                                    }
-                                    )}
-                            </div>
-                        </InfiniteScroll>
+                                        }
+                                        )}
+                                </div>
+                            </InfiniteScroll>
+                        </div>
                     </div>
                 </section>
             )

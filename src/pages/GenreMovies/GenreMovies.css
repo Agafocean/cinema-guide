@@ -1,3 +1,9 @@
+.scrollableDiv {
+    height: 680px;
+    overflow-y: scroll;
+    scrollbar-width: thin;    
+}
+
 .genreMovies-toGenres {
     font-weight: 700;
     font-size: 40px;
