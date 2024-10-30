@@ -39,39 +39,39 @@ export const GenreMovies = () => {
                             <Link to={"/genres"}><span className="genreMovies-toGenres">{"<"}</span></Link>
                             <span>{genre && genre.charAt(0).toUpperCase() + genre.slice(1)}</span>
                         </div>
-                        <div id="scrollableDiv" className="scrollableDiv">
-                            <InfiniteScroll
-                                dataLength={genreMovies.length}
-                                next={() => queryClient.invalidateQueries({ queryKey: ["genreMovies", genre] })}
-                                hasMore={true} // Replace with a condition based on your data source
-                                loader={<LoaderBottom />}
-                                endMessage={<p style={{ textAlign: "center" }}>THE END</p>}
-                                scrollableTarget="scrollableDiv"
-                            >
-                                <div className="genreMovies-posters">
-                                    {genreMovies
-                                        .map((res: IMovie, ind: number) => {
-                                            if (res.posterUrl)
-                                                return (
-                                                    <Link to={`/movie/${res.id}`} className="genreMovies-item" key={ind}
-                                                        state={{ data: res }}>
-                                                        <img src={res.posterUrl} />
-                                                    </Link>
-                                                )
-                                            else return (
-                                                <Link to={`/movie/${res.id}`} className="genreMovies-item" key={ind}
-                                                    state={{ data: res }}>
-                                                    <div className="genreMovies-noposter">
-                                                        <p className="genreMovies-title">{res.title}</p>
-                                                        <p>Poster is coming</p>
-                                                    </div>
+
+                        <InfiniteScroll
+                            dataLength={genreMovies.length}
+                            next={() => queryClient.invalidateQueries({ queryKey: ["genreMovies", genre] })}
+                            hasMore={true} // Replace with a condition based on your data source
+                            loader={<LoaderBottom />}
+                            endMessage={<p style={{ textAlign: "center" }}>THE END</p>}
+                            height={720}
+                            style={{ scrollbarWidth: "thin" }}
+                        >
+                            <div className="genreMovies-posters">
+                                {genreMovies
+                                    .map((res: IMovie, ind: number) => {
+                                        if (res.posterUrl)
+                                            return (
+                                                <Link to={`/movie/${res.id}`} className="genreMovies-item"
+                                                    key={ind} state={{ data: res }}>
+                                                    <img src={res.posterUrl} />
                                                 </Link>
                                             )
-                                        }
-                                        )}
-                                </div>
-                            </InfiniteScroll>
-                        </div>
+                                        else return (
+                                            <Link to={`/movie/${res.id}`} className="genreMovies-item"
+                                                key={ind} state={{ data: res }}>
+                                                <div className="genreMovies-noposter">
+                                                    <p className="genreMovies-title">{res.title}</p>
+                                                    <p>Poster is coming</p>
+                                                </div>
+                                            </Link>
+                                        )
+                                    }
+                                    )}
+                            </div>
+                        </InfiniteScroll>
                     </div>
                 </section>
             )
